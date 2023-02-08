@@ -10,6 +10,7 @@ export class PorCapitalComponent {
   termino: string = '';
   hayError:boolean = false;
   capital: Country[] = []
+  capitalSugerida: Country[] = []
 
   constructor(
     private _paisService: PaisService
@@ -35,7 +36,11 @@ export class PorCapitalComponent {
     this.capital = []
   }
 
-  sugerencias(e:any) {
+  sugerencias(termino:any) {
     this.hayError = false
+    this._paisService.buscarCapital( termino )
+      .subscribe( capital => this.capitalSugerida = capital.splice(0,15),
+      (err)=>this.capitalSugerida)
+
   }
 }
