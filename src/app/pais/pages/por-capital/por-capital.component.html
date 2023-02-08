@@ -9,6 +9,12 @@
               placeholder="Buscar capital..."
     ></app-pais-input>
   </div>
+  <ul class="list-group">
+    <li *ngFor="let capital of capitalSugerida" class="list-group-item list-group-item-action ">
+      <!-- <img [src]="pais.flag" alt="bandera" height="25"> -->
+        <a class="nav-link" [routerLink]="['/pais', capital.alpha2Code]">{{capital.capital}},{{capital.name}}</a>
+    </li>
+  </ul>
 </div>
 
 <hr>
