@@ -39,7 +39,7 @@ export class PorCapitalComponent {
   sugerencias(termino:any) {
     this.hayError = false
     this._paisService.buscarCapital( termino )
-      .subscribe( capital => this.capitalSugerida = capital.splice(0,15),
+      .subscribe( capital => this.capitalSugerida = capital.splice(0,5),
       (err)=>this.capitalSugerida)
 
   }

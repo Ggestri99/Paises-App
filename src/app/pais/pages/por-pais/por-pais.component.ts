@@ -41,7 +41,7 @@ export class PorPaisComponent {
   sugerencias(termino:any) {
     this.hayError = false
     this._paisService.buscarPais( termino )
-      .subscribe( paises => this.paises = paises.splice(0,15),
+      .subscribe( paises => this.paises = paises.splice(0,10),
       (err)=>this.paisesSugeridos)
   }
 
